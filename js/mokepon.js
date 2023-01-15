@@ -9,9 +9,9 @@ function iniciarJuego(){
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.addEventListener('click', ataqueFuego) 
     let botonAgua = document.getElementById('boton-agua')
-    botonAgua = addEventListener('click', ataqueAgua) 
+    botonAgua.addEventListener('click', ataqueAgua) 
     let botonTierra = document.getElementById('boton-tierra')
-    botonTierra = addEventListener('click', ataqueTierra) 
+    botonTierra.addEventListener('click', ataqueTierra) 
 }
 function seleccionarMascotaJugador(){
     let inputHipodoge = document.getElementById('hipodoge')
@@ -55,7 +55,7 @@ function ataqueAgua(){
 }
 
 function ataqueTierra(){
-    ataqueTierra = 'TIERRA'
+    ataqueJugador = 'TIERRA'
     ataqueAleatorioEnemigo()
 }
 
@@ -69,8 +69,15 @@ function ataqueAleatorioEnemigo(){
     }else{
         ataqueEnemigo = 'TIERRA'
     }
+    crearMensaje()
+}
 
+function crearMensaje(){
+    let sectionMensajes = document.getElementById('mensajes')
 
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = 'Tu mascote ataco con' + ataqueJugador +  ',la mascota del enemigo ataco con ' + ataqueEnemigo + ' - GANASTE!'
+    sectionMensajes.appendChild(parrafo)
 }
 
 function aleatorio(min, max){
