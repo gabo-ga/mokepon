@@ -81,21 +81,32 @@ if(ataqueEnemigo == ataqueJugador){
     crearMensaje("Empate")
 }else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA'){
     crearMensaje("Ganaste")
-    vidasEnemigo--
+    vidasEnemigo = vidasEnemigo - 1
     spanVidasEnemigo.innerHTML = vidasEnemigo
 }else if(ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO'){
     crearMensaje("Ganaste")
-    vidasEnemigo--
+    vidasEnemigo = vidasEnemigo - 1
     spanVidasEnemigo.innerHTML = vidasEnemigo
 }else if(ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
     crearMensaje("Ganaste")
-    vidasEnemigo--
+    vidasEnemigo = vidasEnemigo - 1
     spanVidasEnemigo.innerHTML = vidasEnemigo
 }else {
     crearMensaje(Perdiste)
-    vidasJugador--
+    vidasJugador = vidasJugador - 1
     spanVidasJugador.innerHTML = vidasJugador
+
+    revisarVidas()
 }
+
+function revisarVidas(){
+    if(vidasEnemigo == 0){
+        crearMensajeFinal("Has ganado!")
+    }else if(vidasJugador == 0){
+        crearMensaje("has perdido")
+    }
+}
+
 }
 function crearMensaje(resultado){
     let sectionMensajes = document.getElementById('mensajes')
@@ -105,6 +116,16 @@ function crearMensaje(resultado){
     
     sectionMensajes.appendChild(parrafo)
 }
+
+function crearMensajeFinal(resultadoFinal){
+    let sectionMensajes = document.getElementById('mensajes')
+
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = resultadoFinal
+    
+    sectionMensajes.appendChild(parrafo)
+}
+
 
 function aleatorio(min, max){
     return Math.floor(Math.random() * (max - min + 1)+min)
