@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #567189;
+}
 .titulo{
-    color: lightcoral;
-    width: 310px;
-    height: 50px;
-    background-color: teal;
+    color: white;
 }
 
 #selecciona-mascota{
@@ -12,11 +15,29 @@
     align-items: center;
 }
 
+.subtitulo{
+
+}
+
+.tarjetas{
+    display: flex;
+    gap: 10px;
+}
+
 .tarjeta-de-mokepon{
-    width: 100px;
+    width: 180px;
     height: 100px;
-    background-color: aquamarine;
+    background-color: #7B8FA1;
     padding: 10px;
     box-sizing: border-box;
+    margin: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
 
+.tarjeta-de-mokepon img{
+    width: 80px;
 }
