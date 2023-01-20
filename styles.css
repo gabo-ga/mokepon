@@ -42,3 +42,14 @@ body{
 .tarjeta-de-mokepon img{
     width: 80px;
 }
+
+#boton-mascota{
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30px;
+}
