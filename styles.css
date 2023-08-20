@@ -67,3 +67,20 @@ body{
     margin: 10px;
     border-radius: 20px;
 }
+
+#seleccionar-ataque{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-ataque{
+    background-color: #11468f;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: white;
+    border-color: transparent;
+    width: 100px;
+    font-family: 'Poppins', sans-serif;
+}
