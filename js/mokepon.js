@@ -23,7 +23,7 @@ function iniciarJuego(){
     botonTierra.addEventListener('click', ataqueTierra) 
     //boton reiniciar
     let botonReiniciar = document.getElementById("boton-reiniciar")
-    botonReiniciar.addEventListener('clic', reiniciarJuego)
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 function seleccionarMascotaJugador(){
     let sectionSelecionarMascota = document.getElementById('selecciona-mascota')
@@ -149,7 +149,7 @@ function crearMensajeFinal(resultadoFinal){
 }
 
 function reiniciarJuego(){
-    location.reload
+    location.reload()
 }
 
 function aleatorio(min, max){
