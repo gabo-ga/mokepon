@@ -109,19 +109,18 @@ if(ataqueEnemigo == ataqueJugador){
     crearMensaje("Perdiste")
     vidasJugador = vidasJugador - 1
     spanVidasJugador.innerHTML = vidasJugador
-
-    revisarVidas()
+    }
+revisarVidas()
 }
 
 function revisarVidas(){
     if(vidasEnemigo == 0){
         crearMensajeFinal("Has ganado!")
     }else if(vidasJugador == 0){
-        crearMensaje("has perdido")
+        crearMensajeFinal("Has perdido :(")
     }
 }
 
-}
 function crearMensaje(resultado){
     let sectionMensajes = document.getElementById('mensajes')
 
