@@ -105,3 +105,10 @@ body{
     display: flex;
     border-radius: 10px;
 }
+
+.ataques{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    place-items: center
+    ;
+}
