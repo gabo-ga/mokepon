@@ -8,6 +8,11 @@ body{
     color: white;
 }
 
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
 #selecciona-mascota{
     display: flex;
     flex-direction: column;
@@ -43,7 +48,7 @@ body{
     width: 80px;
 }
 
-#boton-mascota{
+#boton-mascota {
     width: 180px;
     height: 40px;
     border-radius: 20px;
@@ -52,4 +57,13 @@ body{
     color: white;
     font-family: 'Poppins', sans-serif;
     margin-top: 30px;
+}
+
+
+.boton-de-ataque {
+    background-color: #7B8FA1;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border-radius: 20px;
 }

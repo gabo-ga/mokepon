@@ -86,7 +86,7 @@ function ataqueAleatorioEnemigo(){
     }else{
         ataqueEnemigo = 'TIERRA'
     }
-    crearMensaje()
+    combate()
 }
 function combate(){
     let spanVidasJugador = document.getElementById('vidas-jugador')
@@ -106,7 +106,7 @@ if(ataqueEnemigo == ataqueJugador){
     vidasEnemigo = vidasEnemigo - 1
     spanVidasEnemigo.innerHTML = vidasEnemigo
 }else {
-    crearMensaje(Perdiste)
+    crearMensaje("Perdiste")
     vidasJugador = vidasJugador - 1
     spanVidasJugador.innerHTML = vidasJugador
 
