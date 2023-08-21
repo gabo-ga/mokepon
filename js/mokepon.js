@@ -23,13 +23,13 @@ function iniciarJuego(){
     botonTierra.addEventListener('click', ataqueTierra) 
     //boton reiniciar
     let botonReiniciar = document.getElementById("boton-reiniciar")
-    botonReiniciar.addEventListener('clic', reiniciarJuego)
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 function seleccionarMascotaJugador(){
     let sectionSelecionarMascota = document.getElementById('selecciona-mascota')
     sectionSelecionarMascota.style.display = 'none'
     let sectionSelecionarAtaque = document.getElementById('seleccionar-ataque')
-    sectionSelecionarAtaque.style.display = 'block'
+    sectionSelecionarAtaque.style.display = 'flex'
 
     let inputHipodoge = document.getElementById('hipodoge')
     let inputCapipepo = document.getElementById('capipepo')
@@ -86,7 +86,7 @@ function ataqueAleatorioEnemigo(){
     }else{
         ataqueEnemigo = 'TIERRA'
     }
-    crearMensaje()
+    combate()
 }
 function combate(){
     let spanVidasJugador = document.getElementById('vidas-jugador')
@@ -106,38 +106,44 @@ if(ataqueEnemigo == ataqueJugador){
     vidasEnemigo = vidasEnemigo - 1
     spanVidasEnemigo.innerHTML = vidasEnemigo
 }else {
-    crearMensaje(Perdiste)
+    crearMensaje("Perdiste")
     vidasJugador = vidasJugador - 1
     spanVidasJugador.innerHTML = vidasJugador
-
-    revisarVidas()
+    }
+revisarVidas()
 }
 
 function revisarVidas(){
     if(vidasEnemigo == 0){
         crearMensajeFinal("Has ganado!")
     }else if(vidasJugador == 0){
-        crearMensaje("has perdido")
+        crearMensajeFinal("Has perdido :(")
     }
 }
 
-}
 function crearMensaje(resultado){
-    let sectionMensajes = document.getElementById('mensajes')
+    let sectionMensajes = document.getElementById('resultado')
+    let sectionAtaquesJugador = document.getElementById('ataques-Jugador')
+    let sectionAtaquesEnemigo = document.getElementById('ataques-Enemigo')
 
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascote ataco con' + ataqueJugador +  ',la mascota del enemigo ataco con ' + ataqueEnemigo + ' - ' + resultado
-    
-    sectionMensajes.appendChild(parrafo)
+    let nuevoAtaqueJugador = document.createElement('p')
+    let nuevoAtaqueEnemigo = document.createElement('p')
+
+    sectionMensajes.innerHTML = resultado
+    nuevoAtaqueJugador.innerHTML = ataqueJugador
+    nuevoAtaqueEnemigo.innerHTML = ataqueEnemigo
+    //let parrafo = document.createElement('p')
+    //parrafo.innerHTML = 'Tu mascote ataco con' + ataqueJugador +  ',la mascota del enemigo ataco con ' + ataqueEnemigo + ' - ' + resultado
+
+    sectionAtaquesJugador.appendChild(nuevoAtaqueJugador)
+    sectionAtaquesEnemigo.appendChild(nuevoAtaqueEnemigo)
 }
 
 function crearMensajeFinal(resultadoFinal){
-    let sectionMensajes = document.getElementById('mensajes')
+    let sectionMensajes = document.getElementById('resultado')
 
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = resultadoFinal
+    sectionMensajes.innerHTML = resultadoFinal
     
-    sectionMensajes.appendChild(parrafo)
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.disabled = true
@@ -150,7 +156,7 @@ function crearMensajeFinal(resultadoFinal){
 }
 
 function reiniciarJuego(){
-    location.reload
+    location.reload()
 }
 
 function aleatorio(min, max){

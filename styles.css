@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #567189;
+}
+.titulo{
+    color: white;
+}
+
+input{
+    display: none;
+}
+
+input:checked + label{
+    background-color: #C70039;
+}
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+#selecciona-mascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitulo{
+    color: white;
+    font-size: 20px;
+}
+
+.tarjetas , .tarjetas-ataques{
+    display: flex;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon{
+    width: 180px;
+    height: 100px;
+    background-color: #7B8FA1;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.tarjeta-de-mokepon img{
+    width: 80px;
+}
+
+#boton-mascota {
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30px;
+}
+
+
+.boton-de-ataque {
+    background-color: #7B8FA1;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+#seleccionar-ataque{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-ataque{
+    background-color: #11468f;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: white;
+    border-color: transparent;
+    width: 200px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#mensajes{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    background-color: antiquewhite;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+#boton-reiniciar{
+    border: transparent;
+    color: white;
+    background-color: #C70039;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    border-radius: 10px;
+}
+
+.ataques{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    place-items: center;
+}
+
+.ataques-jugados, .ataques-enemigos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    @media(max-width: 400px){
+        .tarjetas, .tarjetas-ataques{
+            flex-direction: column;
+        }
+    }
