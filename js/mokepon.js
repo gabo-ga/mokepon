@@ -136,7 +136,6 @@ function iniciarJuego(){
 function seleccionarMascotaJugador(){
     sectionSelecionarMascota.style.display = 'none'
     //sectionSelecionarAtaque.style.display = 'flex'
-    
 
     if(inputHipodoge.checked){
         spanMascotaJugador.innerHTML = inputHipodoge.id
@@ -316,6 +315,11 @@ function pintarCanvas(){
     hipodogeEnemigo.pintarMokepon()
     capipepoEnemigo.pintarMokepon()
     ratigueyaEnemigo.pintarMokepon()
+    if(mascotaJugadorObjeto.velocidadX !== 0 || mascotaJugadorObjeto.velocidadY !== 0){
+        revisarColision(hipodogeEnemigo)
+        revisarColision(capipepoEnemigo)
+        revisarColision(ratigueyaEnemigo)
+    }
 }
 
 function moverDerecha(){
@@ -373,6 +377,27 @@ function obtenerObjetoMascota(){
             return mokepones[i]
         }
     }
+}
+
+function revisarColision(enemigo){
+    const arribaMascota = mascotaJugadorObjeto.y
+    const abajoMascota = mascotaJugadorObjeto.y + mascotaJugadorObjeto.alto
+    const derechaMascota = mascotaJugadorObjeto.x + mascotaJugadorObjeto.ancho
+    const izquierdaMascota = mascotaJugadorObjeto.x
+
+    const arribaEnemigo = enemigo.y
+    const abajoEnemigo = enemigo.y + enemigo.alto
+    const derechaEnemigo = enemigo.x + enemigo.ancho
+    const izquierdaEnemigo = enemigo.x
+
+    if(abajoMascota < arribaEnemigo || 
+        arribaMascota > abajoEnemigo || 
+        derechaMascota < izquierdaEnemigo || 
+        izquierdaMascota > derechaEnemigo){
+        return 
+    }
+    detenerMovimiento()
+    alert("hay colision")
 }
 
 window.addEventListener('load', iniciarJuego)
