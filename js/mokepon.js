@@ -222,7 +222,7 @@ function secuenciaAtaque(){
     })
 }
 
-function seleccionarMascotaEnemigo(){
+function seleccionarMascotaEnemigo(enemigo){
     spanMascotaEnemigo.innerHTML = enemigo.nombre
     ataqueMokeponEnemigo = enemigo.ataques
     secuenciaAtaque()
