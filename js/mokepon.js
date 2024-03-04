@@ -94,49 +94,36 @@ let hipodogeEnemigo = new Mokepon('Hipodoge', './assets/mokepons_mokepon_hipodog
 let capipepoEnemigo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 5, './assets/capipepo.webp')
 let ratigueyaEnemigo = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.webp', 5, './assets/ratigueya.webp')
 
+const hipodoge_ataques = [
+    {nombre: '💧', id: 'boton-agua'},
+    {nombre: '💧', id: 'boton-agua'},
+    {nombre: '💧', id: 'boton-agua'},
+    {nombre: '🔥', id: 'boton-fuego'},
+    {nombre: '🪴', id: 'boton-tierra'}
+]
 
-hipodoge.ataques.push(
-    {nombre: '💧', id: 'boton-agua'},
-    {nombre: '💧', id: 'boton-agua'},
-    {nombre: '💧', id: 'boton-agua'},
-    {nombre: '🔥', id: 'boton-fuego'},
-    {nombre: '🪴', id: 'boton-tierra'}
-)
-hipodogeEnemigo.ataques.push(
-    {nombre: '💧', id: 'boton-agua'},
-    {nombre: '💧', id: 'boton-agua'},
-    {nombre: '💧', id: 'boton-agua'},
-    {nombre: '🔥', id: 'boton-fuego'},
-    {nombre: '🪴', id: 'boton-tierra'}
-)
-capipepo.ataques.push(
+hipodoge.ataques.push(...hipodoge_ataques)
+hipodogeEnemigo.ataques.push(...hipodoge_ataques)
+
+const capipepo_ataques = [
     {nombre: '🪴', id: 'boton-tierra'},
     {nombre: '🪴', id: 'boton-tierra'},
     {nombre: '🪴', id: 'boton-tierra'},
     {nombre: '💧', id: 'boton-agua'},
     {nombre: '🔥', id: 'boton-fuego'}
-)
-capipepoEnemigo.ataques.push(
-    {nombre: '🪴', id: 'boton-tierra'},
-    {nombre: '🪴', id: 'boton-tierra'},
-    {nombre: '🪴', id: 'boton-tierra'},
-    {nombre: '💧', id: 'boton-agua'},
-    {nombre: '🔥', id: 'boton-fuego'}
-)
-ratigueya.ataques.push(
+]
+capipepo.ataques.push(...capipepo_ataques)
+capipepoEnemigo.ataques.push(...capipepo_ataques)
+
+const ratigueya_ataques = [
     {nombre: '🔥', id: 'boton-fuego'},
     {nombre: '🔥', id: 'boton-fuego'},
     {nombre: '🔥', id: 'boton-fuego'},
     {nombre: '🪴', id: 'boton-tierra'},
     {nombre: '💧', id: 'boton-agua'},
-)
-ratigueyaEnemigo.ataques.push(
-    {nombre: '🔥', id: 'boton-fuego'},
-    {nombre: '🔥', id: 'boton-fuego'},
-    {nombre: '🔥', id: 'boton-fuego'},
-    {nombre: '🪴', id: 'boton-tierra'},
-    {nombre: '💧', id: 'boton-agua'},
-)
+]
+ratigueya.ataques.push(...ratigueya_ataques)
+ratigueyaEnemigo.ataques.push(...ratigueya_ataques)
 
 mokepones.push(hipodoge,capipepo,ratigueya)
 
@@ -394,7 +381,14 @@ function enviarPosicion(x, y){
             y
         })
     })
-
+    .then(function (res){
+        if(res.ok){
+            res.json()
+                .then(function ({enemigos}) {
+                    console.log(enemigos);
+                })
+        }
+    })
 }
 
 function moverDerecha(){
